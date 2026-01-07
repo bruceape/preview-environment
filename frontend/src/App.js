@@ -70,9 +70,9 @@ function App() {
                   <div className="task-wrapper">
                       <input type="text" className="task-input w-input" onKeyPress={CheckKey} maxLength="256" name="name-5" data-name="Name 5" placeholder="enter a task description ..." id="name-5"/>
                   </div>
-                  <a className="task-button w-inline-block" onClick={SubmitTodo}>
+                  <button type="button" className="task-button w-inline-block" onClick={SubmitTodo}>
                     <div>Add Task</div>
-                  </a>
+                  </button>
                 </div>
                 <TodoList items={todos}/>
               </form>

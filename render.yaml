@@ -18,6 +18,11 @@ services:
     fromDatabase:
       name: postgres_db
       property: connectionString
+  - key: REDIS_URL
+    fromService:
+      type: keyvalue
+      name: redis_queue
+      property: connectionString
 - type: web
   name: render-todo
   env: static
@@ -29,6 +34,10 @@ services:
       type: web
       name: express-backend
       property: host
+- type: keyvalue
+  name: redis_queue
+  plan: starter
+  ipAllowList: []
 databases:
 - name: postgres_db
   databaseName: test_db
